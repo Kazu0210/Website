@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
+        form{
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .title{
+            color: white;
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 35px;
+            margin: 40px 0px 0px 0px;
+        }
+
+        input{
+            height: 27px;
+            width: 230px;
+            margin: 20px 0px 0px 0px;
+            border-width: 1px;
+            border-radius: 5px;
+            outline-width: 1px;
+            outline: none;
+
+            padding-inline-start: 10px;
+            font-size: 12px;
+            font-family: 'Articulat CF';
+
+            transition-duration: .2s;
+        }
+
+        button{
+            cursor: pointer;
+        }
+        /* login button */
+        #login-button{
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            width: 150px;
+            height: 30px;
+            border: none;
+            border-radius: 50px;
+            margin: 25px 0px 0px 0px;
+        }
+        /* signup button */
+        #signup-button{
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 50px;
+            margin: 45px 0px 0px 0px;
+        }
+
+        /* horizontal line */
+        hr{
+            margin-top: 20px;
+            width: 60%;
+            margin-left: 75px;
+            color: white;
+            border-width: 1px;
+        }
+
+        /* input box */
+        input:hover{
+            background-color: rgb(218, 218, 218);
+            opacity: 1;
+        }
+        input:focus{
+            background-color: rgb(83, 83, 83);
+            color: white;
+        }
+        input:focus::placeholder{
+            color: white;
+        }
+
+        h1{
+            position: absolute;
+            font-size: 12px;
+            font-family: 'Articulat CF';
+            color: white;
+            left: 50%;
+            transform: translate(-50%, 20px);
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <form action="#">
+        <div class="title">Welcome!</div>
+        <br>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <br>
+        <button id="login-button" onclick="loginButton()">Login</button>
+        <hr>
+        <h1>Don't have an account?</h1>
+        <button id="signup-button" onclick="">Sign up</button>
+    </form>
+
+    <script>
+        function loginButton(){ 
+            let username = document.getElementById("username");
+            let password = document.getElementById("password");
+            if(username.value.trim() === '' && password.value.trim() === ''){
+                window.alert("Incorrect Username");
+            }
+        }
+    </script>
+</body>
+</html>
