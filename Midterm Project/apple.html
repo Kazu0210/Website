@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @font-face {
+            font-family: "CustomFont";
+            src: url('ArticulatCF-Light.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: "CustomFont2";
+            src: url('ArticulatCF-Bold.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: "Global";
+            src: url('Global-mL1qm.ttf') format('truetype');
+        }
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +26,7 @@
         }
 
         .title-container, #overview-title, .description{
-            font-family: 'Articulat CF';
+            font-family: 'CustomFont';
             color: white;
             width: fit-content;
         }
@@ -57,7 +69,7 @@
             top: -35px;
         }
         #background-title{
-            font-family: 'GLOBAL';
+            font-family: 'Global';
             font-size: 240px;
             font-weight: lighter;
             color: white;
