@@ -125,8 +125,16 @@
         function loginButton(){ 
             let username = document.getElementById("username");
             let password = document.getElementById("password");
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+
             if(username.value.trim() === '' && password.value.trim() === ''){
-                window.alert("Incorrect Username");
+                usernameInput.style.borderColor = "red";
+                passwordInput.style.borderColor = "red";
+                setTimeout(function(){
+                    usernameInput.style.borderColor = "initial";
+                    passwordInput.style.borderColor = "initial";
+                }, 2000);
             }
         }
     </script>
