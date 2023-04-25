@@ -5,138 +5,388 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
-        @font-face {
-            font-family: "CustomFont";
-            src: url('ArticulatCF-Bold.ttf') format('truetype'),
-                url('ArticulatCF-Light.ttf') format('truetype'),
-                url('Global-mL1qm.ttf') format('truetype');
-        }
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: linear-gradient(#080808, #0a0a0a);
+            overflow: hidden;
+        }
+        .navbar-container{
+            background-image: linear-gradient(#080808, #0a0a0a);
+        }
+        #logo{
+            width: auto;
+            height: 70px;
+            margin: 15px 0px 0px 15px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 5px 15px;
+            text-decoration: none;
+            transition: .3s;
+        }   
+
+        .link1{
+            margin-left: 15px;
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 13px;
+        }
+        #link2{
+            background-color: #151419;
+            width: fit-content;
+            position: absolute;
+            right: 110px;
+            top: 30px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+        #link3{
+            width: fit-content;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+        #link2:hover, #link3:hover{
+            background-color: white;
+        }
+        #link2 a:hover{
+            color: #080808;
+        }
+        #link3 a:hover{
+            color: #080808;
+        }
+        .button{
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 15px;
         }
 
-        body{
-            overflow: hidden;
+        .content-container{
+            background-color: #151419;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .title-container, #overview-title, .description{
+            font-family: 'CustomFont';
+            color: white;
+            width: fit-content;
+        }
+        .title-container, #overview-title{
+            font-weight: bold;
+        }
+
+        .title-container{
+            position: relative;
+            width: fit-content;
+        }
+
+
+        #product-name{
+            font-size: 45px;
+            font-family: 'Articulat CF';
+        }
+
+        .info{
+            margin: 150px 0px 0px 35px;
+            width: fit-content;
+            position: relative;
+            left: 20px;
+        }
+        #overview-title{
+            margin: 25px 0px 0px 0px;
+            font-size: 25px;
+            font-family: 'Articulat CF';
+        }
+        .description{
+            width: 625px;
+            font-family: 'Articulat CF';
+            font-weight: lighter;
+            font-size: 20px;
+            padding: 10px 0px 0px 0px;
+            opacity: .8;
+        }
+
+        .background{
+            position: absolute;
+            margin: 0px 0px 0px 0px;
+            left: 15px;
+            margin-left: 0px;
+            top: 0px;
+        }
+        #background-title{
+            font-family: 'Global';
+            font-size: 240px;
+            font-weight: lighter;
+            color: white;
+            opacity: .3;
+            height: 0px;
+        }
+
+        /* image style */
+        .image1-container{
+            width: fit-content;
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            filter: drop-shadow(0px 0px 5px black);
+        }
+        #image1{
+            width: 270px;
+            height: auto;
+            transition-duration: .3s;
+        }        
+        .image2-container{
+            background-image: linear-gradient(rgba(37, 37, 37, 0.5), rgb(0, 0, 0)),
+            url(img/iPhone-img2.jpg);
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 580px;
+            height: 100%;
+        }
+        .link1 li a:hover{
+            border-right: #080808;
+            border-radius: 10px 10px 0px 0px;
+            background-color: white;
+            color: black;
+        }
+
+        @media screen and (max-width:1280px) {
+            .image1-container{
+                top: 70px;
+                left: 60%;
+            }
+            #image1 {
+                width: 390px;
+                height: auto;
+            }
+            #product-name{
+                font-size: 50px;
+            }
+
+            .description{
+                font-size: 25px;
+            }
+            #overview-title{
+                font-size: 30px;
+            }
+        }
+
+        /* login form */
+        #login-form{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+
+            background-image: linear-gradient(#080808, #0A0A0A);
+            opacity: .9;
+            width: 385px;
+            height: 470px;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blur{
+            filter: blur(10px);
         }
 
         form{
-            padding: 0;
-            margin: 0;
-            text-align: center;
+            margin-top: 80px;
         }
-
-        .title{
+        label{
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 13px;
             color: white;
-            font-family: 'CustomFont';
+        }
+        /* input box */
+        #username, #password{
+            font-family: 'Articulat CF';
             font-weight: bold;
-            font-size: 35px;
-            margin: 40px 0px 0px 0px;
-        }
-
-        input{
-            height: 27px;
-            width: 230px;
-            margin: 20px 0px 0px 0px;
-            border-width: 1px;
-            border-radius: 5px;
-            outline-width: 1px;
-            outline: none;
-
-            padding-inline-start: 10px;
-            font-size: 12px;
-            font-family: 'CustomFont';
-
-            transition-duration: .2s;
-        }
-
-        button{
-            cursor: pointer;
-        }
-        /* login button */
-        #login-button{
-            font-family: 'CustomFont';
-            font-weight: bold;
-            width: 150px;
             height: 30px;
+            width: 300px;
+            left: 478px;
+            top: 304px;
+            border-radius: 5px;
             border: none;
-            border-radius: 50px;
-            margin: 25px 0px 0px 0px;
+            outline: none;
+            margin: 3px 0px 6px 0px;
+            padding-inline-start: 5px;
+
+            transition: .3s;
         }
-        /* signup button */
-        #signup-button{
-            font-family: 'CustomFont';
-            font-weight: bold;
+        #username:hover, #password:hover{
+            background-color: rgb(190, 190, 190);
+        }
+        #username:focus, #password:focus{
+            color: white;
+            background-color: rgb(95, 95, 95);
+        }
+        #submit1{
+            top: 25px;
+            position: relative;
+            left: 35%;
             width: 100px;
             height: 30px;
             border: none;
-            border-radius: 50px;
-            margin: 45px 0px 0px 0px;
+            border-radius: 43px;
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 15px;
+            background-color: #D9D9D9;
+            color: #000000;
+
+            cursor: pointer;
+            transition: .2s;
+        }
+        #submit2{
+            top: 5px;
+            position: relative;
+            left: 35%;
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 43px;
+            font-family: 'Articulat CF';
+            font-weight: bold;
+            font-size: 15px;
+            background-color: #D9D9D9;
+            color: #000000;
+
+            cursor: pointer;
+            transition: .2s;
+        }
+        #submit1:hover, #submit2:hover{
+            background-color: #151419;
+            color: white;
         }
 
-        /* horizontal line */
         hr{
-            margin-top: 20px;
-            width: 60%;
-            margin-left: 75px;
+            margin-left: 25px;
+            margin-top: 50px;
             color: white;
+            width: 250px;
             border-width: 1px;
+            border-style: solid;
         }
-
-        /* input box */
-        input:hover{
-            background-color: rgb(218, 218, 218);
-            opacity: 1;
+        .text-container{
+            text-align: center;
         }
-        input:focus{
-            background-color: rgb(83, 83, 83);
+        #text{
+            padding: 35px 0px 0px 0px;
             color: white;
-        }
-        input:focus::placeholder{
-            color: white;
-        }
-
-        h1{
-            position: absolute;
             font-size: 12px;
-            font-family: 'CustomFont';
-            color: white;
-            left: 50%;
-            transform: translate(-50%, 20px);
+            font-family: 'Articulat CF';
+            font-weight: bold;
+        }
+
+        .navbar-container, .content-container{
+            filter: blur(5px);
         }
     </style>
-    <title>Login</title>
+    <title>Tech Corner</title>
 </head>
 <body>
-    <form action="#">
-        <div class="title">Welcome!</div>
-        <br>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <br>
-        <button id="login-button" onclick="loginButton()">Login</button>
-        <hr>
-        <h1>Don't have an account?</h1>
-        <button id="signup-button" onclick="">Sign up</button>
-    </form>
+
+    <!-- LOGIN FORM -->
+    <div id="login-form">
+        <form action="#" method="post">
+            <label for="username">Username</label>
+            <br>
+            <input type="text" id="username">
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password">
+            <br>
+            <input type="button" value="Login" id="submit1">
+            <hr>
+            <div class="text-container">
+                <h2 id="text">Don't have an account?</h2>
+            </div>
+            <input type="button" value="Sign Up" id="submit2">
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="navbar-container">
+            <img src="img/TechCornerLogo.png" alt="shoplogo" id="logo">
+            <!-- login and cart button -->
+            <div class="button" id="link2">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+            <div class="button" id="link3">
+                <ul>
+                    <li><a href="#">Cart</a></li>
+                </ul>
+            </div>
+            <!-- links -->
+            <div class="link1">
+                <ul>
+                    <li><a href="#">Mobile phone</a></li>
+                    <li><a href="#">Keyboard</a></li>
+                    <li><a href="#">Mouse</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Headphone</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="content-container">
+            <div class="background">
+                <h2 id="background-title">apple</h2>
+            </div>
+            <div class="image2-container"></div>
+            
+            <div class="info">
+                <div class="title-container">
+                    <h1 id="product-name">iPhone 14 Pro Max</h1>
+                </div>
+                <h1 id="overview-title">Overview</h1>
+                <div class="description">
+                    iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in an whole new way with Dynamic Island and Always-On display. Crash Detection, a new safety feature calls for help when you can't.
+                </div>
+            </div>
+            <div class="image1-container">
+                <img src="img/iPhone-img1.png" alt="image" id="image1">
+            </div>
+        </div>
+    </div>
 
     <script>
-        function loginButton(){ 
-            let username = document.getElementById("username");
-            let password = document.getElementById("password");
-            const usernameInput = document.getElementById("username");
-            const passwordInput = document.getElementById("password");
+        // const loginButton = document.getElementById('link2')
+        // const loginform = document.getElementById('login-form');
 
-            if(username.value.trim() === '' && password.value.trim() === ''){
-                usernameInput.style.borderColor = "red";
-                passwordInput.style.borderColor = "red";
-                setTimeout(function(){
-                    usernameInput.style.borderColor = "initial";
-                    passwordInput.style.borderColor = "initial";
-                }, 2000);
-            }
-        }
+        // loginButton.addEventListener('click', () =>{
+        //     loginform.style.display = 'flex';
+        // });
     </script>
 </body>
 </html>
